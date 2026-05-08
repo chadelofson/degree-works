@@ -1,0 +1,24 @@
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('div.highlighter-rouge').forEach((codeBlock) => {
+      // Create the button
+      const button = document.createElement('button');
+      button.className = 'copy-button';
+      button.type = 'button';
+      button.innerText = 'Copy';
+
+      // Add click event to copy text
+      button.addEventListener('click', () => {
+        // Jekyll wraps the actual code inside a <code> tag
+        const code = codeBlock.querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          button.innerText = 'Copied!';
+          setTimeout(() => { button.innerText = 'Copy'; }, 2000);
+        });
+      });
+
+      codeBlock.appendChild(button);
+    });
+  });
+</script>
