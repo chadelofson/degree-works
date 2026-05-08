@@ -1,0 +1,16 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* Target the wrapper around your content */
+#main_content_wrap .inner {
+  max-width: 900px; /* Adjust this to your preferred width */
+  margin: 0 auto;   /* Centers the container */
+  padding: 0 40px;  /* Adds breathing room on the sides */
+}
+
+/* Ensure header and footer match this centered width */
+header .inner, footer .inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
