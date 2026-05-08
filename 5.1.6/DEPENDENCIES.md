@@ -236,14 +236,19 @@ sudo dnf versionlock add rabbitmq-server
 
 ### Install Apache FOP
 
-#### Download FOP (2.6)
-##### Download and copy to the server
+#### Step 1: Download FOP (2.6)
+
+You have two options to get Apache FOP
+
+##### OPTION A: Download and copy to the server
 This can be done on your local computer and secure copy it to your server:
 ```bash
 scp /path/to/fop-2.6-bin.tar.gz
 ```
 
-##### Download from the server
+OR
+
+##### OPTION B: Download from the server
 To download from the server:
 ```bash
 wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-2.6-bin.tar.gz
@@ -256,7 +261,7 @@ sudo dnf install wget
 
 #### Extract FOP
 ```bash
-tar -xzf fop-2.6-bin.tar.gz -C /opt/
+sudo tar -xzf fop-2.6-bin.tar.gz -C /opt/
 ```
 
 #### Create a symlink

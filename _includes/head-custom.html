@@ -11,7 +11,7 @@
       // Add click event to copy text
       button.addEventListener('click', () => {
         // Jekyll wraps the actual code inside a <code> tag
-        const code = codeBlock.querySelector('code').innerText;
+        const code = codeBlock.querySelector('code').innerText.trim();
         navigator.clipboard.writeText(code).then(() => {
           button.innerText = 'Copied!';
           setTimeout(() => { button.innerText = 'Copy'; }, 2000);
