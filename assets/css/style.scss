@@ -39,3 +39,53 @@ header .inner, footer .inner {
 .copy-button:hover {
   background-color: #555;
 }
+
+/* Tab styles */
+.tab-container {
+  margin: 16px 0;
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 0;
+}
+
+.tab-button {
+  padding: 8px 20px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  background: #f0f0f0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+  margin-right: 4px;
+  color: #555;
+}
+
+.tab-button.active {
+  background: #fff;
+  border-bottom: 2px solid #fff;
+  margin-bottom: -2px;
+  color: #222;
+}
+
+.tab-button:hover:not(.active) {
+  background: #e0e0e0;
+}
+
+.tab-content {
+  display: none;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content .highlighter-rouge {
+  margin: 0;
+  border-radius: 0;
+}

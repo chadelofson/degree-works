@@ -1,4 +1,16 @@
 <script>
+  function showTab(tabId, button) {
+    var container = button.closest('.tab-container');
+    container.querySelectorAll('.tab-content').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    container.querySelectorAll('.tab-button').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.getElementById('tab-' + tabId).classList.add('active');
+    button.classList.add('active');
+  }
+
   // Wait for the DOM to be fully loaded
   document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('div.highlighter-rouge').forEach((codeBlock) => {
