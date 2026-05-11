@@ -98,9 +98,9 @@ sudo rpm --import 'https://github.com/rabbitmq/signing-keys/releases/download/3.
 
 ##### Option A - Create the file on your computer
 
-1. copy the files into your editor and save the file (can be saved as txt)
+1. copy the rabbitmq.repo source file below Option B for your version of Redhat Enterprise Linux into your editor and save the file (can be saved as txt)
 
-2. Secure copy the file to the server:
+2. Secure copy the file to the server (Use Git Bash on Windows):
 
 ```bash
 scp /path/to/rabbitmq.txt username@servername.doman.name:~/
@@ -124,7 +124,7 @@ OR
 sudo vi /etc/yum.repos.d/rabbitmq.repo
 ```
 
-2. Copy the file below for your version of Redhat and Paste it into the terminal
+2. Copy the file below for the version of Redhat being used and Paste it into the terminal of the vim editor
 
 3. Once the content is in the file type
 
