@@ -8,6 +8,29 @@
 - OpenSSL 1.1.1
 - RabbitMQ v3.13.1
 
+### Do your checks for he software above:
+#### Java
+```bash java -version ```
+
+#### Perl
+```bash perl -v ```
+
+#### GCC compiler
+```bash gcc ```
+
+#### openssl
+```bash openssl version ```
+
+#### Korn Shell
+```bash
+ksh
+```
+
+### Install Korn Shell
+```bash
+sudo dnf install ksh
+```
+
 ### Remove Java 11 from RHEL
 ```bash
 sudo dnf remove java-11-openjdk java-11-openjdk-headless
@@ -40,14 +63,43 @@ sudo dnf group install "Development Tools" -y
 
 ### Install RabbitMQ
 
-#### Import Signatures
+#### Step 1 - Import Signatures
 ```bash
 sudo rpm --import 'https://github.com/rabbitmq/signing-keys/releases/download/3.0/rabbitmq-release-signing-key.asc'
 sudo rpm --import 'https://github.com/rabbitmq/signing-keys/releases/download/3.0/cloudsmith.rabbitmq-erlang.E495BB49CC4BBE5B.key'
 sudo rpm --import 'https://github.com/rabbitmq/signing-keys/releases/download/3.0/cloudsmith.rabbitmq-server.9F4587F226208342.key'
 ```
 
-#### Create file rabbitmq.repo
+#### Step 2 - Create file rabbitmq.repo
+
+##### Option A - Create the file on your computer
+
+1. copy the files into your editor and save the file (can be saved as txt)
+
+2. Secure copy the file to the server:
+```bash
+scp /path/to/rabbitmq.txt username@servername.doman.name:~/
+```
+This saves the file in the home directory of your login
+
+3. Login to the server and copy the file to the following location:
+```bash
+sudo cp rabbitmq.txt /etc/yum.repos.d/rabbitmq.repo
+```
+
+OR
+
+##### Option B - Create the file on the server
+
+1. Login to the server and start the vim editor:
+```bash
+sudo vi /etc/yum.repos.d/rabbitmq.repo
+```
+2. Copy the file below for your version of Redhat and Paste it into the terminal
+
+3. Once the content is in the file type ```bash :x ``` to save the contents in the file
+
+NOTE: You can also do the following ```bash :wq ```, which will write the file and quit the editor
 
 ##### For Redhat Enterprise Linux 8
 
@@ -207,7 +259,7 @@ autorefresh=1
 type=rpm-md
 ```
 
-#### Install Dependencies
+#### Install RabbitMQ Dependencies
 
 ##### Step 1 - Update Repos
 ```bash
@@ -249,27 +301,33 @@ scp /path/to/fop-2.6-bin.tar.gz
 OR
 
 ##### OPTION B: Download from the server
-To download from the server:
+
+1. First Check if you have wget installed:
 ```bash
-wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-2.6-bin.tar.gz
-```
-**NOTE**
-Your server might night have wget installed.  You can download wget with the following command:
+wget
+   ```
+
+2. If you get a command not found install wget:
 ```bash
 sudo dnf install wget
 ```
 
-#### Extract FOP
+3. Then download the FOP file:
+```bash
+wget https://archive.apache.org/dist/xmlgraphics/fop/binaries/fop-2.6-bin.tar.gz
+```   
+
+#### Step 2: Extract FOP
 ```bash
 sudo tar -xzf fop-2.6-bin.tar.gz -C /opt/
 ```
 
-#### Create a symlink
+#### Step 3: Create a symlink
 ```bash
 sudo ln -s /opt/fop/fop/fop /usr/local/bin/fop
 ```
 
-#### Verify FOP version
+#### Step 4: Verify FOP version
 ```bash
 fop -version
 ```
