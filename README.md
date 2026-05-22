@@ -5,5 +5,5 @@ This Repo is for anyone looking to have additional documentation on top of the D
 ## Degree Works Versions
 
 - 5.1.6
-    - Installing [Dependencies](5.1.6/DEPENDENCIES.md)
+    - Installing [Dependencies](5.1.6/README.md)
 
