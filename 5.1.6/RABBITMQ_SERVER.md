@@ -1,3 +1,13 @@
+---
+layout: article
+nav_previous:
+  title: System Dependencies
+  url: DEPENDENCIES.html
+nav_next:
+  title: Install RabbitMQ Client
+  url: RABBITMQ_CLIENT.html
+---
+
 # Install RabbitMQ
 
 ## Step 1 - Import Signatures
@@ -267,4 +277,3 @@ sudo dnf install -y rabbitmq-server-3.13.1
 sudo dnf versionlock add rabbitmq-server
 ```
 
-[Next Install RabbitMQ Client](RABBITMQ_CLIENT.md)

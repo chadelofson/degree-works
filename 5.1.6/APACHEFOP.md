@@ -1,3 +1,13 @@
+---
+layout: article
+nav_previous:
+  title: Install RabbitMQ Client
+  url: RABBITMQ_CLIENT.html
+nav_next:
+  title: README
+  url: README.html
+---
+
 # Install Apache FOP
 
 ## Step 1: Download FOP (2.6)
@@ -43,7 +53,7 @@ sudo tar -xzf fop-2.6-bin.tar.gz -C /opt/
 ## Step 3: Create a symlink
 
 ```bash
-sudo ln -s /opt/fop/fop/fop /usr/local/bin/fop
+sudo ln -s /opt/fop-2.6/fop/fop /usr/local/bin/fop
 ```
 
 ## Step 4: Verify FOP version
@@ -51,5 +61,3 @@ sudo ln -s /opt/fop/fop/fop /usr/local/bin/fop
 ```bash
 fop -version
 ```
-
-[Back to the ReadME](README.md)

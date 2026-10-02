@@ -1,3 +1,13 @@
+---
+layout: article
+nav_previous:
+    title: Install RabbitMQ Server
+    url:RABBITMQ_SERVER.html
+nav_next:
+    title: Install Apache FOP
+    url: APACHEFOP.html
+---
+
 # RabbitMQ Client Install
 
 ## Download Client
@@ -71,5 +81,3 @@ sudo ln -s $PWD/librabbitmq/librabbitmq.so.4 /usr/local/lib/librabbitmq.so.4
 ```bash
 sudo ln -s $PWD/librabbitmq/librabbitmq.a /usr/local/lib/librabbitmq.a
 ```
-
-[Next Install Apache FOP](APACHEFOP.md)

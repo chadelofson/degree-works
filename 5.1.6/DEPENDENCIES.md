@@ -1,3 +1,10 @@
+---
+layout: article
+nav_next:
+  title: Install RabbitMQ Server
+  url: RABBITMQ_SERVER.html
+---
+
 ## Dependencies
 
 ### Required Software and Versions
@@ -130,5 +137,9 @@ rm cmake-3.30.5-linux-x86_64.tar
 ```bash
 ln -s /etc/cmake/cmake-3.30.5/bin/cmake /usr/bin/cmake
 ```
+
+### Install NCurses
+
+
 
 [Next Install RabbitMQ Server](RABBITMQ_SERVER.md)
