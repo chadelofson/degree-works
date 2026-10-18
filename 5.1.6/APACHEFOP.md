@@ -4,8 +4,8 @@ nav_previous:
   title: Install RabbitMQ Client
   url: RABBITMQ_CLIENT.html
 nav_next:
-  title: README
-  url: README.html
+  title: Oracle Base Client
+  url: ORACLE_CLIENT_BASE_INSTALL.html
 ---
 
 # Install Apache FOP
